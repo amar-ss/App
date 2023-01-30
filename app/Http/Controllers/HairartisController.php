@@ -14,7 +14,9 @@ class HairartisController extends Controller
      */
     public function index()
     {
-        return view('hairartis.index');
+        $nomor = 1;
+        $hairartis= hairartis::all();
+        return view('hairartis.index', compact('nomor','hairartis'));
     }
 
     /**
@@ -24,7 +26,7 @@ class HairartisController extends Controller
      */
     public function create()
     {
-        //
+        return view('hairartis.form');
     }
 
     /**
@@ -35,7 +37,15 @@ class HairartisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $hairartis = new hairartis;
+
+        $hairartis->nama= $request -> nama;
+        $hairartis->no_hp=$request -> no_hp;
+        $hairartis->harga=$request -> harga;
+        $hairartis ->save();
+
+        return redirect('/hairartis');
+
     }
 
     /**

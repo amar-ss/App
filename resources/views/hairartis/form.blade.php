@@ -24,7 +24,7 @@
     <!-- Default box -->
     <div class="card">
       <div class="card-header">
-        <a href="/hairartis/form" class="btn btn-primary">Tambah Data</a>
+        <h3 class="card-title">Title</h3>
 
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -35,38 +35,24 @@
           </button>
         </div>
       </div>
+
       <div class="card-body">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nama</th>
-                <th scope="col">No Hp</th>
-                <th scope="col">Harga</th>
-                <th scope="col">Action</th>            
-              </tr>
-            </thead>
-            <tbody>
-                @foreach ($hairartis as $item)
-                <tr>
-                    <th scope="row">{{$nomor++}}</th>
-                    <td>{{$item->nama}}</td>
-                    <td>{{$item->no_hp}}</td>
-                    <td>{{$item->harga}}</td>
-                    <td>
-                        <a href="#" class="btn btn-sm btn-info">edit</a>
-                        <a href="#" class="btn btn-sm btn-danger">hapus</a>
-                    </td>
-                  </tr>
-                @endforeach
-              
-             
-            </tbody>
-          </table>
+
+        <form method="POST" action="/jurusan">
+            @csrf
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Kode</label>
+              <input type="text" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Jurusan</label>
+              <input type="text" name="jurusan" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Tambah Data</button>
+          </form>
       </div>
       <!-- /.card-body -->
-    </div>
-    <!-- /.card -->
 
-  </section>
-@endsection
+    </div>
+    </section>
+    @endsection

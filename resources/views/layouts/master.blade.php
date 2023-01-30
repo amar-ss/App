@@ -305,10 +305,10 @@
           </div>
         </div>
       </div><!-- /.container-fluid --> --}}
-    </section>
+    {{-- </section> --}}
 
     <!-- Main content -->
-        @yield('conten-header')
+        @yield('content-header')
       <!-- Default box -->
       {{-- <div class="card">
         <div class="card-header">
@@ -335,7 +335,7 @@
       <!-- /.card -->
 
     {{-- </section> --}}
-    @yield('conten')
+    @yield('content')
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
