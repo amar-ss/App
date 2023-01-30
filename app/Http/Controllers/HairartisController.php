@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\hairartis;
 
 class HairartisController extends Controller
 {
@@ -13,7 +14,7 @@ class HairartisController extends Controller
      */
     public function index()
     {
-        //
+        return view('hairartis.index');
     }
 
     /**
