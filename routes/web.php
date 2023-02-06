@@ -29,6 +29,6 @@ Route::middleware('auth')-> group(function(){
     Route::post('/hairartis', [HairartisController::class, 'store']);
     Route::get('/hairartis/edit/{id}', [HairartisController::class, 'edit']);
     Route::put('/hairartis/{id}', [HairartisController::class, 'update']);
-    Route::get('hairartis/hapus/{id}',[HairartisController::class, 'destroy']);
+    Route::delete('hairartis/{id}',[HairartisController::class, 'destroy']);
 
 });

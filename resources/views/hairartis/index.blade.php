@@ -55,7 +55,34 @@
                     <td>{{$item->harga}}</td>
                     <td>
                         <a href="/hairartis/edit/{{$item->id}}" class="btn btn-sm btn-info">edit</a>
-                        <a href="/hairartis/hapus/{{$item->id}}" class="btn btn-sm btn-danger">hapus</a>
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-default{{$item->id}}">
+                          hapus
+                        </button>
+                        <div class="modal fade" id="modal-default{{$item->id}}">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">Peringatan!</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <p>Yakin data hairartis {{$item->hairartis}} ingin dihapus?</p>
+                              </div>
+                              <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                <form action="/hairartis/{{$item->id}}" method="POST">
+                                  @method('DELETE')
+                                  @csrf
+                                  <button type="submit" class="btn btn-primary">Hapus</button>
+                                </form>
+                              </div>
+                            </div>
+                            <!-- /.modal-content -->
+                          </div>
+                          <!-- /.modal-dialog -->
+                        </div>
                     </td>
                   </tr>
                 @endforeach
