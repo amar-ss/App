@@ -1,17 +1,17 @@
 @extends('layouts.master')
-@section('judul', 'Tambah hair artis')
+@section('judul', 'Edit hair artis')
 @section('content-header')
 
 <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Tambah Hair Artis</h1>
+          <h1>Edit Hair Artis</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Blank Page</li>
+            <li class="breadcrumb-item active">Edit hairartis</li>
           </ol>
         </div>
       </div>
@@ -38,22 +38,23 @@
 
       <div class="card-body">
 
-        <form method="POST" action="/hairartis">
+        <form method="POST" action="/hairartis/{{$hairartis->id}}">
+            @method('PUT')
             @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nama</label>
-              <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="nama" value="{{$hairartis->nama}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">No Hp</label>
-              <input type="text" name="no_hp" class="form-control" id="exampleInputPassword1">
+              <input type="text" name="no_hp" value="{{$hairartis->no_hp}}" class="form-control" id="exampleInputPassword1">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Harga</label>
-              <input type="text" name="harga" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="harga" value="{{$hairartis->harga}}"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
-
-            <button type="submit" class="btn btn-primary">Tambah Data</button>
+            
+            <button type="submit" class="btn btn-primary">Edit Data</button>
           </form>
       </div>
       <!-- /.card-body -->

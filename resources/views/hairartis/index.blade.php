@@ -54,8 +54,8 @@
                     <td>{{$item->no_hp}}</td>
                     <td>{{$item->harga}}</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-info">edit</a>
-                        <a href="#" class="btn btn-sm btn-danger">hapus</a>
+                        <a href="/hairartis/edit/{{$item->id}}" class="btn btn-sm btn-info">edit</a>
+                        <a href="/hairartis/hapus/{{$item->id}}" class="btn btn-sm btn-danger">hapus</a>
                     </td>
                   </tr>
                 @endforeach

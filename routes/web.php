@@ -25,4 +25,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware('auth')-> group(function(){
     //manajemen hairartis
     Route::get('/hairartis', [HairartisController::class, 'index']);
+    Route::get('/hairartis/form', [HairartisController::class, 'create']);
+    Route::post('/hairartis', [HairartisController::class, 'store']);
+    Route::get('/hairartis/edit/{id}', [HairartisController::class, 'edit']);
+    Route::put('/hairartis/{id}', [HairartisController::class, 'update']);
+    Route::get('hairartis/hapus/{id}',[HairartisController::class, 'destroy']);
+
 });

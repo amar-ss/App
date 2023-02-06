@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('hairartis', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('no hp');
+            $table->string('no_hp');
             $table->string('harga');
             $table->timestamps();
         });

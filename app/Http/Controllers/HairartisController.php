@@ -27,6 +27,7 @@ class HairartisController extends Controller
     public function create()
     {
         return view('hairartis.form');
+
     }
 
     /**
@@ -67,7 +68,8 @@ class HairartisController extends Controller
      */
     public function edit($id)
     {
-        //
+        $hairartis = Hairartis::find($id);
+        return view('hairartis.edit', compact('hairartis'));
     }
 
     /**
@@ -79,7 +81,14 @@ class HairartisController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $hairartis = Hairartis::find($id);
+
+        $hairartis->nama= $request -> nama;
+        $hairartis->no_hp=$request -> no_hp;
+        $hairartis->harga=$request -> harga;
+        $hairartis ->save();
+
+        return redirect('/hairartis');
     }
 
     /**
@@ -90,6 +99,11 @@ class HairartisController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+       
+            $hairartis   = Hairartis::find($id);
+            $hairartis->delete();
+        
+            return redirect('/hairartis');
+        }
+    
 }
