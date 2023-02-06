@@ -31,4 +31,13 @@ Route::middleware('auth')-> group(function(){
     Route::put('/hairartis/{id}', [HairartisController::class, 'update']);
     Route::delete('hairartis/{id}',[HairartisController::class, 'destroy']);
 
+    Route::get('/paket', [PaketController::class, 'index']);
+    Route::get('/paket/form', [PaketController::class, 'create']);
+    Route::post('/paket', [PaketController::class, 'store']);
+    Route::get('/paket/edit/{id}', [PaketController::class, 'edit']);
+    Route::put('/paket/{id}', [PaketController::class, 'update']);
+    Route::delete('paket/{id}',[PaketController::class, 'destroy']);
+
 });
+
+

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Paket;
+use App\Models\Costumer;
 
-class PaketController extends Controller
+class CostumerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class PaketController extends Controller
     public function index()
     {
         $nomor = 1;
-        $paket= paket::all();
-        return view('paket.index', compact('nomor','paket'));
+        $costmer= costumer::all();
+        return view('costumer.index', compact('nomor','costumer'));
     }
 
     /**
@@ -26,7 +26,7 @@ class PaketController extends Controller
      */
     public function create()
     {
-        return view('paket.form');
+        //
     }
 
     /**
@@ -37,14 +37,7 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
-        $hairartis = new paket;
-
-        $hairartis->kode= $request -> kode;
-        $hairartis->nama_paket=$request -> nama_paket;
-        $hairartis->harga=$request -> harga;
-        $hairartis ->save();
-
-        return redirect('/paket');
+        //
     }
 
     /**
@@ -66,8 +59,7 @@ class PaketController extends Controller
      */
     public function edit($id)
     {
-        $paket = Paket::find($id);
-        return view('paket.edit', compact('paket'));
+        //
     }
 
     /**
@@ -79,14 +71,7 @@ class PaketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $paket = Paket::find($id);
-
-        $paket->kode= $request -> kode;
-        $paket->nama_paket=$request -> nama_paket;
-        $paket->harga=$request -> harga;
-        $paket ->save();
-
-        return redirect('/paket');
+        //
     }
 
     /**
@@ -97,11 +82,6 @@ class PaketController extends Controller
      */
     public function destroy($id)
     {
-       
-        $paket   = Paket::find($id);
-        $paket->delete();
-    
-        return redirect('/paket');
+        //
     }
-
 }

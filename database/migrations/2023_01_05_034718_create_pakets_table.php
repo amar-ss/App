@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('pakets', function (Blueprint $table) {
             $table->id();
             $table->string('kode');
-            $table->string('nama paket');
+            $table->string('nama_paket');
             $table->string('harga');
             $table->timestamps();
         });

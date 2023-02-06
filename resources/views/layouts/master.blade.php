@@ -236,7 +236,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/hairartis" class="nav-link">
+            <a href="/paket" class="nav-link">
               <i class="nav-icon fas fa-book-open"></i>
               <p>
                 Book Now
@@ -263,10 +263,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="/boking" class="nav-link">
               <i class="nav-icon fas fa-phone"></i>
               <p>
-                Contact Us
+                Booking
                 
               </p>
             </a>
