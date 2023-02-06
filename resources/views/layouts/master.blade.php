@@ -263,7 +263,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/boking" class="nav-link">
+            <a href="/costumer" class="nav-link">
               <i class="nav-icon fas fa-phone"></i>
               <p>
                 Booking

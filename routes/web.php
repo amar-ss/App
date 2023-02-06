@@ -38,6 +38,13 @@ Route::middleware('auth')-> group(function(){
     Route::put('/paket/{id}', [PaketController::class, 'update']);
     Route::delete('paket/{id}',[PaketController::class, 'destroy']);
 
+    Route::get('/costumer', [CostumerController::class, 'index']);
+    Route::get('/costumer/form', [CostumerController::class, 'create']);
+    Route::post('/costumer', [CostumerController::class, 'store']);
+    Route::get('/costumer/edit/{id}', [CostumerController::class, 'edit']);
+    Route::put('/costumer/{id}', [CostumerController::class, 'update']);
+    Route::delete('costumer/{id}',[CostumerController::class, 'destroy']);
+
 });
 
 

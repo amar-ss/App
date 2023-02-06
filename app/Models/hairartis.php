@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class hairartis extends Model
 {
-    use HasFactory;
+    public function hairartiss()
+    {
+        return $this->hasone(Hairartis::class, "id","hairartis_id");
+    }
 }

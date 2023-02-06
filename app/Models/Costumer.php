@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Costumer extends Model
 {
-    use HasFactory;
+    public function costumer()
+    {
+        return $this->belongsTo(paket::class);
+    }
 }

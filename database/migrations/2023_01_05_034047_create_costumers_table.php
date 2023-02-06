@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('no hp');
             $table->bigInteger('pakets_id');
+            $table->bigInteger('hairartiss_id');
             $table->timestamps();
         });
     }
