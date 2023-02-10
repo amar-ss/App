@@ -43,22 +43,22 @@
             @csrf
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nama</label>
-              <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="nama" value="{{$costumer->nama}}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Alamat</label>
-              <input type="text" name="alamat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="alamat" value="{{$costumer->alamat}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">No Hp</label>
-              <input type="text" name="no_hp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" name="no_hp" value="{{$costumer->no_hp}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Nama Paket</label>
-              <select name="nama_paket" class="form-control" id="">
+              <select name="nama_paket" value="{{$costumer->nama_paket}}" class="form-control" id="">
                 <option value="">-Pilih Paket-</option>
                 @foreach($paket as $data)
-                <option value="{{$data->id}}">{{$data->kode}} - {{$data->nama_paket}} - {{$data->harga}}</option>
+                <option value="{{$data->id}}"> {{$data->kode}} - {{$data->nama_paket}} - {{$data->harga}} </option>
                 @endforeach
               </select>
             </div>

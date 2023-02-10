@@ -74,8 +74,10 @@ class CostumerController extends Controller
      */
     public function edit($id)
     {
-        $costumer = costumer::find($id);
-        return view('costumer.edit', compact('costumer'));
+        $costumer = Costumer::find($id);
+        $paket = paket::all();
+        $hairartis = hairartis::all();
+        return view('costumer.edit',compact('costumer','paket','hairartis'));
     }
 
     /**
@@ -87,7 +89,16 @@ class CostumerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $costumer = costumer::find($id);
+
+        $costumer->nama= $request -> nama;
+        $costumer->alamat= $request -> alamat;
+        $costumer->no_hp= $request -> no_hp;
+        $costumer->pakets_id=$request -> nama_paket;
+        $costumer->hairartiss_id= $request -> hair_artis;
+        $costumer ->save();
+
+        return redirect('/costumer');
     }
 
     /**
