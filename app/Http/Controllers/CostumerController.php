@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Costumer;
+use App\Models\Paket;
+use App\Models\hairartis;
+
 
 class CostumerController extends Controller
 {
@@ -15,8 +18,8 @@ class CostumerController extends Controller
     public function index()
     {
         $nomor = 1;
-        $costmer= costumer::all();
-        return view('costumer.index', compact('nomor','costumer'));
+        $costumer= Costumer::all();
+        return view('costumer.index', compact('costumer','nomor'));
     }
 
     /**
@@ -26,7 +29,10 @@ class CostumerController extends Controller
      */
     public function create()
     {
-        //
+        $paket = paket::all();
+        $hairartis= hairartis::all();
+        return view('costumer.form',compact('paket','hairartis'));
+        
     }
 
     /**
@@ -37,7 +43,16 @@ class CostumerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $costumer = new costumer;
+
+        $costumer->nama= $request -> nama;
+        $costumer->alamat= $request -> alamat;
+        $costumer->no_hp= $request -> no_hp;
+        $costumer->pakets_id=$request -> nama_paket;
+        $costumer->hairartiss_id= $request -> hair_artis;
+        $costumer ->save();
+
+        return redirect('/costumer');
     }
 
     /**
@@ -59,7 +74,8 @@ class CostumerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $costumer = costumer::find($id);
+        return view('costumer.edit', compact('costumer'));
     }
 
     /**

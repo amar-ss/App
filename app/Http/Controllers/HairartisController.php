@@ -42,7 +42,6 @@ class HairartisController extends Controller
 
         $hairartis->nama= $request -> nama;
         $hairartis->no_hp=$request -> no_hp;
-        $hairartis->harga=$request -> harga;
         $hairartis ->save();
 
         return redirect('/hairartis');
@@ -85,7 +84,6 @@ class HairartisController extends Controller
 
         $hairartis->nama= $request -> nama;
         $hairartis->no_hp=$request -> no_hp;
-        $hairartis->harga=$request -> harga;
         $hairartis ->save();
 
         return redirect('/hairartis');

@@ -42,7 +42,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Nama</th>
                 <th scope="col">No Hp</th>
-                <th scope="col">Harga</th>
                 <th scope="col">Action</th>            
               </tr>
             </thead>
@@ -52,7 +51,6 @@
                     <th scope="row">{{$nomor++}}</th>
                     <td>{{$item->nama}}</td>
                     <td>{{$item->no_hp}}</td>
-                    <td>{{$item->harga}}</td>
                     <td>
                         <a href="/hairartis/edit/{{$item->id}}" class="btn btn-sm btn-info">edit</a>
                         <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-default{{$item->id}}">

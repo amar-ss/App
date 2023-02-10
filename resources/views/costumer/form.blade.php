@@ -41,17 +41,36 @@
         <form method="POST" action="/costumer">
             @csrf
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Kode</label>
-              <input type="text" name="kode" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="exampleInputEmail1" class="form-label">Nama</label>
+              <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Nama Paket</label>
-              <input type="text" name="nama_paket" class="form-control" id="exampleInputPassword1">
+              <label for="exampleInputEmail1" class="form-label">Alamat</label>
+              <input type="text" name="alamat" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Harga</label>
-              <input type="text" name="harga" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="exampleInputEmail1" class="form-label">No Hp</label>
+              <input type="text" name="no_hp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nama Paket</label>
+              <select name="nama_paket" class="form-control" id="">
+                <option value="">-Pilih Paket-</option>
+                @foreach($paket as $data)
+                <option value="{{$data->id}}">{{$data->kode}} - {{$data->nama_paket}} - {{$data->harga}}</option>
+                @endforeach
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Hair Artis</label>
+              <select name="hair_artis" class="form-control" id="">
+                <option value="">-Pilih Hair Artis-</option>
+                @foreach($hairartis as $data)
+                <option value="{{$data->id}}">{{$data->nama}} - {{$data->no_hp}}</option>
+                @endforeach
+              </select>
+            </div>
+            
 
             <button type="submit" class="btn btn-primary">Tambah Data</button>
           </form>

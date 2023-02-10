@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HairartisController;
 use App\Http\Controllers\PaketController;
+use App\Http\Controllers\CostumerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
