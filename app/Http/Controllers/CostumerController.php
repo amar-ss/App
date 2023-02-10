@@ -109,6 +109,10 @@ class CostumerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $costumer   = costumer::find($id);
+        $costumer->delete();
+    
+        return redirect('/costumer');
+    
     }
 }
